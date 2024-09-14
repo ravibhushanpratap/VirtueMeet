@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="title-id"></title>
+    <link rel="stylesheet" href="/Styles/RoomStyle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/d2c32395cb.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var Room_id = "<%= roomID %>";
+    </script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main_left">
+        <div class="main_left_videos">
+          <div class="videoGrid"></div>
+        </div>
+      </div>
+      <div class="main_right">
+        <div class="main_chat_window">
+          <div class="chat-heading">
+            <div class="main_heading">
+              <div class="chat_header">in-chat messages</div>
+              <i class="fas fa-times"></i>
+            </div>
+            <div class="chat_info">
+              Messages can only be seen by people in call and are deleted when
+              call ends.
+            </div>
+          </div>
+          <ul id="UserTexts" class="messages-list">
+            <!-- Here lies the in meeting chat messages-->
+          </ul>
+        </div>
+
+        <div class="main_message_input_container">
+          <input
+            type="text"
+            id="chat-message"
+            placeholder="Send a message to everyone"
+          />
+          <i id="send" class="fas fa-paper-plane"></i>
+        </div>
+      </div>
+    </div>
+    <div class="main_controls">
+      <div class="meeting_id"></div>
+      <div class="main_middle_controls">
+        <i id="MicButton" class="button fas fa-microphone fa-lg"></i>
+        <i id="VideoButton" class="button fas fa-video fa-lg"></i>
+        <i class="button far fa-closed-captioning fa-lg"></i>
+        <i class="button fas fa-share-square fa-lg"></i>
+        <i class="button fas fa-ellipsis-v fa-lg"></i>
+        <i
+          id="disconnectCall"
+          style="background-color: rgb(217, 81, 64)"
+          class="button fas fa-phone-alt fa-lg"
+        ></i>
+      </div>
+      <div class="main_right_controls">
+        <i class="right-button fas fa-info-circle fa-lg"></i>
+        <i class="right-button fas fa-user-friends fa-lg"></i>
+        <i class="right-button far fa-comment-alt fa-lg"></i>
+        <i class="right-button fas fa-angry fa-lg"></i>
+      </div>
+    </div>
+
+    <script src="/scripts/Roomscripts.js"></script>
+  </body>
+</html>
